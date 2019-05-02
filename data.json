@@ -1,0 +1,109 @@
+[
+    {
+        "_comment": "Copyright 2019 Ciena Corporation",
+        "_comment": "",
+        "_comment": "Licensed under the Apache License, Version 2.0 (the 'License');",
+        "_comment": "you may not use this file except in compliance with the License.",
+        "_comment": "You may obtain a copy of the License at",
+        "_comment": "",
+        "_comment": "    http://www.apache.org/licenses/LICENSE-2.0",
+        "_comment": "",
+        "_comment": "Unless required by applicable law or agreed to in writing, software",
+        "_comment": "distributed under the License is distributed on an 'AS IS' BASIS,",
+        "_comment": "WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied."
+  },
+  {
+    "method": "GetVoltha",
+    "input": ".*",
+    "output": {
+      "version": "0.0.1-mock"
+    }
+  },
+  {
+    "method": "ListAdapters",
+    "input": ".*",
+    "output": {
+      "items": [
+        {
+          "id": "acme",
+          "vendor": "Acme Adapter Services",
+          "version": "1.5.0",
+          "config": {
+            "log_level": "INFO"
+          }
+        },
+        {
+          "id": "ollie",
+          "vendor": "Ollie's OLTs & ONUs",
+          "version": "1.0.3",
+          "config": {
+            "log_level": "DEBUG"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "method": "ListDevices",
+    "input": ".*",
+    "output": {
+      "items": [
+        {
+          "id": "00015bbbfdb3c068",
+          "type": "acme_olt",
+          "root": true,
+          "parent_id": "0001aabbccddeeff",
+          "serial_number": "192.168.42.3:50060",
+          "vlan": 0,
+          "admin_state": "ENABLED",
+          "oper_status": "ACTIVE",
+          "connect_status": "REACHABLE"
+        },
+        {
+          "id": "0001552615104a2c",
+          "type": "acme_onu",
+          "root": false,
+          "parent_id": "00015bbbfdb3c068",
+          "serial_number": "ACME012345678C",
+          "vlan": 128,
+          "admin_state": "ENABLED",
+          "oper_status": "ACTIVE",
+          "connect_status": "REACHABLE"
+        },
+        {
+          "id": "0001552615104a2d",
+          "type": "acme_onu",
+          "root": false,
+          "parent_id": "00015bbbfdb3c068",
+          "serial_number": "ACME012345678D",
+          "vlan": 129,
+          "admin_state": "ENABLED",
+          "oper_status": "ACTIVE",
+          "connect_status": "REACHABLE"
+        },
+        {
+          "id": "0001552615104a2e",
+          "type": "acme_onu",
+          "root": false,
+          "parent_id": "00015bbbfdb3c068",
+          "serial_number": "ACME012345678E",
+          "vlan": 130,
+          "admin_state": "ENABLED",
+          "oper_status": "ACTIVE",
+          "connect_status": "REACHABLE"
+        },
+        {
+          "id": "0001552615104a2f",
+          "type": "acme_onu",
+          "root": false,
+          "parent_id": "00015bbbfdb3c068",
+          "serial_number": "ACME012345678F",
+          "vlan": 131,
+          "admin_state": "DISABLED",
+          "oper_status": "FAILED",
+          "connect_status": "UNREACHABLE"
+        }
+      ]
+    }
+  }
+]
