@@ -28,6 +28,7 @@ COPY clean.sh /voltha/clean.sh
 RUN /voltha/clean.sh
 
 FROM ciena/grpc-mock
+ENV GRPC_MOCK_COMPARE=sparse
 WORKDIR /voltha
 COPY --from=build /voltha /voltha
 COPY mock.sh clean.sh mock-v1.js mock-v2.js data.json /voltha/
