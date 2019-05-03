@@ -1,16 +1,16 @@
 [
-    {
-        "_comment": "Copyright 2019 Ciena Corporation",
-        "_comment": "",
-        "_comment": "Licensed under the Apache License, Version 2.0 (the 'License');",
-        "_comment": "you may not use this file except in compliance with the License.",
-        "_comment": "You may obtain a copy of the License at",
-        "_comment": "",
-        "_comment": "    http://www.apache.org/licenses/LICENSE-2.0",
-        "_comment": "",
-        "_comment": "Unless required by applicable law or agreed to in writing, software",
-        "_comment": "distributed under the License is distributed on an 'AS IS' BASIS,",
-        "_comment": "WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied."
+  {
+    "_comment": "Copyright 2019 Ciena Corporation",
+    "_comment": "",
+    "_comment": "Licensed under the Apache License, Version 2.0 (the 'License');",
+    "_comment": "you may not use this file except in compliance with the License.",
+    "_comment": "You may obtain a copy of the License at",
+    "_comment": "",
+    "_comment": "    http://www.apache.org/licenses/LICENSE-2.0",
+    "_comment": "",
+    "_comment": "Unless required by applicable law or agreed to in writing, software",
+    "_comment": "distributed under the License is distributed on an 'AS IS' BASIS,",
+    "_comment": "WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied."
   },
   {
     "method": "GetVoltha",
@@ -42,6 +42,46 @@
         }
       ]
     }
+  },
+  {
+      "method": "CreateDevice",
+      "input": { "type": "acme_olt" },
+      "output": { "id": "00015bbbfdb3c068" }
+  },
+  {
+      "method": "CreateDevice",
+      "input": { "type": "simulated_olt" },
+      "output": { "id": "00015bbbfdb3c068" }
+  },
+  {
+      "method": "DisableDevice",
+      "input": "(00015bbbfdb3c068)|(0001552615104a2c)|(0001552615104a2d)|(0001552615104a2e)|(0001552615104a2f)",
+      "output": {}
+  },
+  {
+      "method": "DisableDevice",
+      "input": ".*",
+      "error": { "code": 3, "message": "device not found"}
+  },
+  {
+      "method": "EnableDevice",
+      "input": "(00015bbbfdb3c068)|(0001552615104a2c)|(0001552615104a2d)|(0001552615104a2e)|(0001552615104a2f)",
+      "output": {}
+  },
+  {
+      "method": "EnableDevice",
+      "input": ".*",
+      "error": { "code": 3, "message": "device not found"}
+  },
+  {
+      "method": "DeleteDevice",
+      "input": "(00015bbbfdb3c068)|(0001552615104a2c)|(0001552615104a2d)|(0001552615104a2e)|(0001552615104a2f)",
+      "output": {}
+  },
+  {
+      "method": "DeleteDevice",
+      "input": ".*",
+      "error": { "code": 3, "message": "device not found"}
   },
   {
     "method": "ListDevices",
@@ -105,5 +145,30 @@
         }
       ]
     }
+  },
+  {
+    "method": "ListDeviceFlows",
+    "input": { "id": "00015bbbfdb3c068" },
+    "output": {
+      "items": [
+        {
+          "id": 1000
+        },
+        {
+          "id": 1001
+        },
+        {
+          "id": 1002
+        },
+        {
+          "id": 1003
+        }
+      ]
+    }
+  },
+  {
+    "method": "ListDeviceFlows",
+    "input": ".*",
+    "error": { "code": 3, "message": "device not found"}
   }
 ]
